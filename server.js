@@ -11,9 +11,6 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.get('*', (req, res)=>(
     res.sendFile(path.join(__dirname, 'dist/index.html'))
 ));
-app.use('/', basic);
-app.use('/hotels', hotels);
-//app.use('/hotelsdb', hotelsdb);
 app.listen(port, (req, res)=>(
     console.log(`PORT: ${port}`)
 ));
