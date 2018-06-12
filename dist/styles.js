@@ -89,7 +89,7 @@ module.exports = "/*!\n *  Font Awesome 4.7.0 by @davegandy - http://fontawesome
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n.body-app{\n    padding-top: 50px;\n}\n.star{\n    text-decoration: none;\n    display: inline-block;\n    font-size: 32px;\n    font-size: 1.8rem;\n    color: #fbff00;\n    margin: -18px 1px -8px -3px;\n}\n.searchCard{\n    margin-top: 2px;\n    padding: 10px;\n}\n.searchCard div.row{\n    width: 100%;\n    margin-left: 0px;\n}\n.searchCard div input{\n    width: 65%;\n}\n.searchCard div button{\n    width: 35%;\n}\n.iconFont{\n    color: #007bff;\n    font-size: 1em;\n    margin-left: 5px;\n    margin-right: 5px;\n}\n.searchSection{\n    width: 100%;\n}"
+module.exports = "/* You can add global styles to this file, and also import other style files */\r\n.body-app{\r\n    padding-top: 50px;\r\n}\r\n.star{\r\n    text-decoration: none;\r\n    display: inline-block;\r\n    font-size: 32px;\r\n    font-size: 1.8rem;\r\n    color: #fbff00;\r\n    margin: -18px 1px -8px -3px;\r\n}\r\n.searchCard{\r\n    margin-top: 2px;\r\n    padding: 10px;\r\n}\r\n.searchCard div.row{\r\n    width: 100%;\r\n    margin-left: 0px;\r\n}\r\n.searchCard div input{\r\n    width: 65%;\r\n}\r\n.searchCard div button{\r\n    width: 35%;\r\n}\r\n.iconFont{\r\n    color: #007bff;\r\n    font-size: 1em;\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n.searchSection{\r\n    width: 100%;\r\n}"
 
 /***/ }),
 
@@ -621,9 +621,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\almundo\src\styles.css */"./src/styles.css");
-__webpack_require__(/*! D:\almundo\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-module.exports = __webpack_require__(/*! D:\almundo\node_modules\font-awesome\css\font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
+__webpack_require__(/*! D:\Estudio\AlMundo\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! D:\Estudio\AlMundo\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+module.exports = __webpack_require__(/*! D:\Estudio\AlMundo\node_modules\font-awesome\css\font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
 
 
 /***/ })

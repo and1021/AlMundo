@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"bg-light body-app\">\n  <div class=\"container main-container\">\n    <div class=\"row flex-xl-nowrap\">\n      <div class=\"col-12 col-md-12 col-xl-12 bd-content\">\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<app-navbar></app-navbar>\r\n<div class=\"bg-light body-app\">\r\n  <div class=\"container main-container\">\r\n    <div class=\"row flex-xl-nowrap\">\r\n      <div class=\"col-12 col-md-12 col-xl-12 bd-content\">\r\n        <router-outlet></router-outlet>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -191,7 +191,7 @@ module.exports = ".textAmount{\r\n  text-align: center;\r\n  font-size: 13px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card itemCard\" style=\"width: 100%;\">\n  <div class=\"row itemRow\">\n    <div class=\"col-md-4\">\n      <img class=\"card-img-top itemImage\" src=\"assets/images/hotels/{{item.image}}\"\n      onerror=\"this.src='assets/images/hotels/none.jpg'\">\n    </div>\n    <div class=\"col-md-5 px-3\">\n      <div class=\"card-block px-3\">\n        <div class=\"row rowCard\">\n          <h5 class=\"titleCard\">\n            {{item.name}}\n          </h5>\n        </div>\n        <div class=\"row rowCard\">\n          <div class=\"itemStar\" *ngFor=\"let number of starArray\">\n              <!-- <img class=\"\" src=\"assets/icons/filters/star.svg\" *ngIf=\"number <= item.stars\"> -->\n              <div *ngIf=\"number <= item.stars\" class=\"star\">&#9733;</div>\n          </div>          \n        </div>\n        <div class=\"row rowCard\">\n          <div class=\"amenities\" style=\"width: 100%;\" *ngFor=\"let amenity of item.amenities\">\n            <img class=\"\" src=\"assets/icons/amenities/{{amenity}}.svg\">\n          </div>        \n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 borderAmount\">\n      <label class=\"textAmount\">Precio por noche por habitación</label>\n      <p class=\"amountContainer\">\n        <span class=\"currency\">ARS</span>\n        &nbsp;\n        <span class=\"amount\">{{item.price}}</span>\n      </p>\n      <a href=\"#\" class=\"btn btn-primary btnCardItem\">Ver hotel</a>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"card itemCard\" style=\"width: 100%;\">\r\n  <div class=\"row itemRow\">\r\n    <div class=\"col-md-4\">\r\n      <img class=\"card-img-top itemImage\" src=\"assets/images/hotels/{{item.image}}\"\r\n      onerror=\"this.src='assets/images/hotels/none.jpg'\">\r\n    </div>\r\n    <div class=\"col-md-5 px-3\">\r\n      <div class=\"card-block px-3\">\r\n        <div class=\"row rowCard\">\r\n          <h5 class=\"titleCard\">\r\n            {{item.name}}\r\n          </h5>\r\n        </div>\r\n        <div class=\"row rowCard\">\r\n          <div class=\"itemStar\" *ngFor=\"let number of starArray\">\r\n              <!-- <img class=\"\" src=\"assets/icons/filters/star.svg\" *ngIf=\"number <= item.stars\"> -->\r\n              <div *ngIf=\"number <= item.stars\" class=\"star\">&#9733;</div>\r\n          </div>          \r\n        </div>\r\n        <div class=\"row rowCard\">\r\n          <div class=\"amenities\" style=\"width: 100%;\" *ngFor=\"let amenity of item.amenities\">\r\n            <img class=\"\" src=\"assets/icons/amenities/{{amenity}}.svg\">\r\n          </div>        \r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-md-3 borderAmount\">\r\n      <label class=\"textAmount\">Precio por noche por habitación</label>\r\n      <p class=\"amountContainer\">\r\n        <span class=\"currency\">ARS</span>\r\n        &nbsp;\r\n        <span class=\"amount\">{{item.price}}</span>\r\n      </p>\r\n      <a href=\"#\" class=\"btn btn-primary btnCardItem\">Ver hotel</a>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -260,7 +260,7 @@ module.exports = ".searchButton{\r\n    color: #ffffff !important;\r\n    backgr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card searchCard\">\n  <div class=\"row\">\n    <a data-toggle=\"collapse\" href=\"#collapseNameFilter\" aria-expanded=\"false\" aria-controls=\"collapseNameFilter\">\n      <span class=\"iconFont\">\n        <fa name=\"search\"></fa>\n      </span>\n      <label>  Nombre de hotel  </label>\n      <span class=\"iconFont\">\n        <fa name=\"caret-down\"></fa>\n      </span>\n    </a>\n    <div class=\"collapse searchSection\" id=\"collapseNameFilter\">\n      <input class=\"searchElement\" #textbox type=\"text\" [value]=\"inputValue\" placeholder=\"Ingrese el nombre del hotel\">\n      <button class=\"btn btn-outline-primary btn-block searchButton searchElement\" (click)=\"searchHotels(textbox.value)\">Aceptar</button>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"card searchCard\">\r\n  <div class=\"row\">\r\n    <a data-toggle=\"collapse\" href=\"#collapseNameFilter\" aria-expanded=\"false\" aria-controls=\"collapseNameFilter\">\r\n      <span class=\"iconFont\">\r\n        <fa name=\"search\"></fa>\r\n      </span>\r\n      <label>  Nombre de hotel  </label>\r\n      <span class=\"iconFont\">\r\n        <fa name=\"caret-down\"></fa>\r\n      </span>\r\n    </a>\r\n    <div class=\"collapse searchSection\" id=\"collapseNameFilter\">\r\n      <input class=\"searchElement\" #textbox type=\"text\" [value]=\"inputValue\" placeholder=\"Ingrese el nombre del hotel\">\r\n      <button class=\"btn btn-outline-primary btn-block searchButton searchElement\" (click)=\"searchHotels(textbox.value)\">Aceptar</button>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -333,7 +333,7 @@ module.exports = ".starfilter{\r\n    display: inline-block;\r\n    width: 10% !
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card searchCard\">\n  <div class=\"row\">\n    <a data-toggle=\"collapse\" href=\"#collapseStarFilter\" aria-expanded=\"false\" aria-controls=\"collapseStarFilter\">\n      <span class=\"iconFont\">\n        <fa name=\"star\"></fa>\n      </span>\n      <label> Estrellas</label>\n      <span class=\"iconFont\">\n          <fa name=\"caret-down\"></fa>\n        </span>\n    </a>\n  </div>\n  <div class=\"collapse\" id=\"collapseStarFilter\">\n      <input id=\"cbFilter\" class=\"checkFilter\" type=\"checkbox\" [checked]=\"isAllChecked()\" (change)=\"checkAll($event)\" checked/>\n    <label>Todas las estrellas</label>\n    <div *ngFor=\"let filter of starArray\">\n      <input id=\"cbFilter\" class=\"checkFilter\" type=\"checkbox\" [(ngModel)]=\"filter.checked\" (change)=\"searchHotelsByStar()\"/>\n      <div class=\"starfilter\" *ngFor=\"let number of [1,2,3,4,5]\">\n        <div *ngIf=\"number <= filter.value\">\n          <div class=\"star\">&#9733;</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"card searchCard\">\r\n  <div class=\"row\">\r\n    <a data-toggle=\"collapse\" href=\"#collapseStarFilter\" aria-expanded=\"false\" aria-controls=\"collapseStarFilter\">\r\n      <span class=\"iconFont\">\r\n        <fa name=\"star\"></fa>\r\n      </span>\r\n      <label> Estrellas</label>\r\n      <span class=\"iconFont\">\r\n          <fa name=\"caret-down\"></fa>\r\n        </span>\r\n    </a>\r\n  </div>\r\n  <div class=\"collapse\" id=\"collapseStarFilter\">\r\n      <input id=\"cbFilter\" class=\"checkFilter\" type=\"checkbox\" [checked]=\"isAllChecked()\" (change)=\"checkAll($event)\" checked/>\r\n    <label>Todas las estrellas</label>\r\n    <div *ngFor=\"let filter of starArray\">\r\n      <input id=\"cbFilter\" class=\"checkFilter\" type=\"checkbox\" [(ngModel)]=\"filter.checked\" (change)=\"searchHotelsByStar()\"/>\r\n      <div class=\"starfilter\" *ngFor=\"let number of [1,2,3,4,5]\">\r\n        <div *ngIf=\"number <= filter.value\">\r\n          <div class=\"star\">&#9733;</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -376,7 +376,6 @@ var FilterStarComponent = /** @class */ (function () {
         this.starArray.forEach(function (x) { return (x.checked = ev.target.checked); });
         this.searchHotelsByStar();
     };
-    ;
     FilterStarComponent.prototype.isAllChecked = function () {
         return this.starArray.every(function (a) { return a.checked; });
     };
@@ -385,17 +384,15 @@ var FilterStarComponent = /** @class */ (function () {
         this.checkValue = '';
         this.starArray.forEach(function (element) {
             if (element.checked) {
-                if (_this.checkValue == '') {
-                    _this.checkValue = _this.checkValue + element.toString();
+                if (_this.checkValue === '') {
+                    _this.checkValue = _this.checkValue + element.value.toString();
                 }
                 else {
-                    _this.checkValue = _this.checkValue + '-' + element.toString();
+                    _this.checkValue = _this.checkValue + '-' + element.value.toString();
                 }
             }
         });
-        if (this.checkValue != '') {
-            this.checkValue = 'stars:' + this.checkValue;
-        }
+        this.checkValue = 'stars:' + this.checkValue;
         this.searchHotelsB.emit(this.checkValue);
     };
     __decorate([
@@ -435,7 +432,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-3\">\n    <app-list-filter (searchHotelsF)=\"searchHotelsByFilter($event)\"></app-list-filter>\n  </div>\n  <div class=\"col-md-9\">\n    <app-list-card [List]='hotelsList'></app-list-card>\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-3\">\r\n    <app-list-filter (searchHotelsF)=\"searchHotelsByFilter($event)\"></app-list-filter>\r\n  </div>\r\n  <div class=\"col-md-9\">\r\n    <app-list-card [List]='hotelsList'></app-list-card>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -581,7 +578,7 @@ module.exports = ".titleCard{\r\n  margin-top: 10px;\r\n  padding: 10px;\r\n  he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card titleCard\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <label>Filtros</label>\n    </div>\n  </div>\n</div>\n<app-filter-name (searchHotelsA)=\"getFilterName($event)\"></app-filter-name>\n<app-filter-star (searchHotelsB)=\"getFilterStar($event)\"></app-filter-star>\n"
+module.exports = "<div class=\"card titleCard\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n      <label>Filtros</label>\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-filter-name (searchHotelsA)=\"getFilterName($event)\"></app-filter-name>\r\n<app-filter-star (searchHotelsB)=\"getFilterStar($event)\"></app-filter-star>\r\n"
 
 /***/ }),
 
@@ -616,32 +613,30 @@ var ListFilterComponent = /** @class */ (function () {
     ListFilterComponent.prototype.ngOnInit = function () {
     };
     ListFilterComponent.prototype.getFilterStar = function (checkValue) {
+        this.filter = '';
         this.filterStar = checkValue;
-        if (!!this.filterStar) {
-            if (!!this.filterName) {
-                this.filter = this.filterName + '|' + this.filterStar;
-            }
-            else {
-                this.filter = this.filterStar;
-            }
+        if (!!this.filterName && !!this.filterStar) {
+            this.filter = this.filterName + '|' + this.filterStar;
         }
-        else {
-            this.filterStar = null;
+        else if (!!this.filterName) {
+            this.filter = this.filterName;
+        }
+        else if (!!this.filterStar) {
+            this.filter = this.filterStar;
         }
         this.searchHotelsF.emit(this.filter);
     };
     ListFilterComponent.prototype.getFilterName = function (inputValue) {
+        this.filter = '';
         this.filterName = inputValue;
-        if (!!this.filterName) {
-            if (!!this.filterStar) {
-                this.filter = this.filterStar + '|' + this.filterName;
-            }
-            else {
-                this.filter = this.filterName;
-            }
+        if (!!this.filterName && !!this.filterStar) {
+            this.filter = this.filterName + '|' + this.filterStar;
         }
-        else {
-            this.filterName = null;
+        else if (!!this.filterName) {
+            this.filter = this.filterName;
+        }
+        else if (!!this.filterStar) {
+            this.filter = this.filterStar;
         }
         this.searchHotelsF.emit(this.filter);
     };
@@ -682,7 +677,7 @@ module.exports = ".logo{\r\n    width: 100%;\r\n  }\r\n  .headerAlmundo{\r\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar fixed-top navbar-light headerAlmundo\">\n  <a class=\"navbar-brand\" href=\"#\">\n    <img src=\"assets/images/logo-almundo.svg\" width=\"30\" height=\"30\" class=\"d-inline-block align-top logo\" alt=\"almundo.com\">\n  </a>\n</nav>\n  "
+module.exports = "<nav class=\"navbar fixed-top navbar-light headerAlmundo\">\r\n  <a class=\"navbar-brand\" href=\"#\">\r\n    <img src=\"assets/images/logo-almundo.svg\" width=\"30\" height=\"30\" class=\"d-inline-block align-top logo\" alt=\"almundo.com\">\r\n  </a>\r\n</nav>\r\n  "
 
 /***/ }),
 
@@ -828,7 +823,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\almundo\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Estudio\AlMundo\src\main.ts */"./src/main.ts");
 
 
 /***/ })
