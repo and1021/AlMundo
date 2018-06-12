@@ -11,15 +11,16 @@ import { FilterStarComponent } from './components/filter-star/filter-star.compon
 import { FilterNameComponent } from './components/filter-name/filter-name.component';
 import { ListFilterComponent } from './components/list-filter/list-filter.component';
 import { HotelsComponent } from './components/hotels/hotels.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const Routes = [
   {
     path: '',
-    redirectTo: 'hotels',
+    redirectTo: 'finderhotels',
     pathMatch: 'full'
   },
   {
-    path: 'hotels',
+    path: 'finderhotels',
     component: HotelsComponent
   }
 ];
@@ -32,7 +33,8 @@ const Routes = [
     FilterStarComponent,
     FilterNameComponent,
     ListFilterComponent,
-    HotelsComponent
+    HotelsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

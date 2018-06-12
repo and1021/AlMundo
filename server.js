@@ -8,6 +8,9 @@ const hotels = require('./server/routes/hotels');
 //const hotelsdb = require('./server/routes/hotelsdb');
 const port = process.env.PORT || 4200;
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/', basic);
+app.use('/hotels', hotels);
+//app.use('/hotelsdb', hotelsdb);
 app.get('*', (req, res)=>(
     res.sendFile(path.join(__dirname, 'dist/index.html'))
 ));

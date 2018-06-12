@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HotelsService } from '../../services/hotels.service';
 
 @Component({
   selector: 'app-hotels',
@@ -8,9 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HotelsComponent implements OnInit {
 
-  constructor() { }
+  //TODO Create an interface to normalize the object
+  hotelsList: any = [];
+
+  constructor(private hotelsService: HotelsService) { }
 
   ngOnInit() {
+    this.hotelsService.getHotels('name:|stars:').subscribe(hotels =>{
+      this.hotelsList = hotels;
+    });
   }
 
 }

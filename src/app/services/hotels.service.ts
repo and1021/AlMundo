@@ -8,16 +8,8 @@ export class HotelsService {
 
   constructor(private http:HttpClient) { }
 
-  getHotels(): Observable<Hotels[]> {
-    return this.http.get<Hotels[]>('/hotels/');
-  }
-
-  getHotelsByName(hotel: string): Observable<Hotels[]> {
-    return this.http.get<Hotels[]>('/hotels/'+ hotel);
-  }
-
-  getHotelsByStars(star: string): Observable<Hotels[]>{
-    return this.http.get<Hotels[]>('/hotels/filters/'+ star);
+  getHotels(filters: string): Observable<Hotels[]> {
+    return this.http.get<Hotels[]>('/hotels/'+ filters);
   }
 }
 

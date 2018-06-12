@@ -1,3 +1,10 @@
-<p>
-  hotels works!
-</p>
+<div class="row">
+  <div class="col-md-3">
+    <app-list-filter></app-list-filter>
+    <!-- <app-search (inputValue)="inputValue" (checkValue)="checkValue" (searchHotelsB)="searchHotelsByStar($event)" (searchHotelsA)="searchHotels($event)"></app-search> -->
+  </div>
+  <div class="col-md-9">
+    <app-list-card></app-list-card>
+    <!-- <app-hotel-card [hotel]="hotel" style="width: 100%;" *ngFor="let hotel of hotels"></app-hotel-card> -->
+  </div>
+</div>
