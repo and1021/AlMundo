@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_card_info_card_info_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/card-info/card-info.component */ "./src/app/components/card-info/card-info.component.ts");
@@ -104,12 +104,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_list_filter_list_filter_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/list-filter/list-filter.component */ "./src/app/components/list-filter/list-filter.component.ts");
 /* harmony import */ var _components_hotels_hotels_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/hotels/hotels.component */ "./src/app/components/hotels/hotels.component.ts");
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var _services_hotels_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/hotels.service */ "./src/app/services/hotels.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -152,10 +154,12 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(Routes)
             ],
-            providers: [],
+            providers: [
+                _services_hotels_service__WEBPACK_IMPORTED_MODULE_13__["HotelsService"]
+            ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
@@ -252,7 +256,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  filter-name works!\n</p>\n"
+module.exports = "<div class=\"card searchCard\">\n  <div class=\"row\">\n    <label>Nombre del hotel</label>\n    <input #textbox class=\"form-control\" type=\"text\" [value]=\"inputValue\" placeholder=\"Ingrese el nombre del hotel\">\n    <button class=\"btn btn-outline-primary btn-block searchButton\" (click)=\"searchHotels(textbox.value)\">Aceptar</button>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -315,7 +319,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  filter-star works!\n</p>\n"
+module.exports = "<div class=\"card searchCard\">\n  <div class=\"row\">\n    <label>Estrellas</label>\n  </div>\n  <div>\n    <input id=\"cbFilter\" class=\"checkFilter\" type=\"checkbox\" (change)=\"searchHotelsByStar(6)\" checked/>\n    <label>Todas las estrellas</label>\n    <div *ngFor=\"let filter of filterList\">\n      <input id=\"cbFilter\" class=\"checkFilter\" type=\"checkbox\" (change)=\"searchHotelsByStar(filter)\"/>\n      <div class=\"starfilter\" *ngFor=\"let number of [1,2,3,4,5]\">\n        <div *ngIf=\"number <= filter\">\n          <div class=\"star\">&#9733;</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -450,7 +454,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-card-info [item]='item' ngFor='let item of List'></app-card-info>"
+module.exports = "Lista de cartas\r\n<app-card-info [item]='item' *ngFor='let item of List'></app-card-info>"
 
 /***/ }),
 
@@ -518,7 +522,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  list-filter works!\n</p>\n"
+module.exports = "<div class=\"card titleCard\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <label>Filtros</label>\n    </div>\n    <app-filter-name class=\"col-md-12\"></app-filter-name>\n    <app-filter-star class=\"col-md-12\"></app-filter-star>\n  </div>\n</div>"
 
 /***/ }),
 

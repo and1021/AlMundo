@@ -1,3 +1,17 @@
-<p>
-  filter-star works!
-</p>
+<div class="card searchCard">
+  <div class="row">
+    <label>Estrellas</label>
+  </div>
+  <div>
+    <input id="cbFilter" class="checkFilter" type="checkbox" (change)="searchHotelsByStar(6)" checked/>
+    <label>Todas las estrellas</label>
+    <div *ngFor="let filter of filterList">
+      <input id="cbFilter" class="checkFilter" type="checkbox" (change)="searchHotelsByStar(filter)"/>
+      <div class="starfilter" *ngFor="let number of [1,2,3,4,5]">
+        <div *ngIf="number <= filter">
+          <div class="star">&#9733;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -27,9 +27,12 @@
     "core-js": "^2.5.4",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
+    "jquery": "^3.3.1",
     "mongoose": "^5.1.4",
     "nodemon": "^1.17.5",
     "path": "^0.12.7",
+    "popper": "^1.0.1",
+    "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

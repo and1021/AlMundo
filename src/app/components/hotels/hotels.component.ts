@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { HotelsService } from '../../services/hotels.service';
+import { map } from "rxjs/operators";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-hotels',

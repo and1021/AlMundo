@@ -1,3 +1,7 @@
-<p>
-  filter-name works!
-</p>
+<div class="card searchCard">
+  <div class="row">
+    <label>Nombre del hotel</label>
+    <input #textbox class="form-control" type="text" [value]="inputValue" placeholder="Ingrese el nombre del hotel">
+    <button class="btn btn-outline-primary btn-block searchButton" (click)="searchHotels(textbox.value)">Aceptar</button>
+  </div>
+</div>

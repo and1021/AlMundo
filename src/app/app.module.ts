@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -12,6 +12,8 @@ import { FilterNameComponent } from './components/filter-name/filter-name.compon
 import { ListFilterComponent } from './components/list-filter/list-filter.component';
 import { HotelsComponent } from './components/hotels/hotels.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { HotelsService } from './services/hotels.service';
 
 const Routes = [
   {
@@ -39,10 +41,12 @@ const Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(Routes)
   ],
-  providers: [],
+  providers: [
+    HotelsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
