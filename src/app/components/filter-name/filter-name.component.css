@@ -1,0 +1,10 @@
+.searchButton{
+    color: #ffffff !important;
+    background-color: #020692 !important;
+    background-image: none !important;
+    border-color: #ffffff00 !important;
+}
+
+.searchElement{
+    display: inline-block !important;
+}

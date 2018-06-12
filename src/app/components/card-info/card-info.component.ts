@@ -7,10 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardInfoComponent implements OnInit {
   @Input() item:any = {};
+  starArray:any = [1,2,3,4,5];
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {  
   }
 
 }

@@ -1,14 +1,22 @@
 <div class="card searchCard">
   <div class="row">
-    <label>Estrellas</label>
+    <a data-toggle="collapse" href="#collapseStarFilter" aria-expanded="false" aria-controls="collapseStarFilter">
+      <span class="iconFont">
+        <fa name="star"></fa>
+      </span>
+      <label> Estrellas</label>
+      <span class="iconFont">
+          <fa name="caret-down"></fa>
+        </span>
+    </a>
   </div>
-  <div>
-    <input id="cbFilter" class="checkFilter" type="checkbox" (change)="searchHotelsByStar(6)" checked/>
+  <div class="collapse" id="collapseStarFilter">
+      <input id="cbFilter" class="checkFilter" type="checkbox" [checked]="isAllChecked()" (change)="checkAll($event)" checked/>
     <label>Todas las estrellas</label>
-    <div *ngFor="let filter of filterList">
-      <input id="cbFilter" class="checkFilter" type="checkbox" (change)="searchHotelsByStar(filter)"/>
+    <div *ngFor="let filter of starArray">
+      <input id="cbFilter" class="checkFilter" type="checkbox" [(ngModel)]="filter.checked" (change)="searchHotelsByStar()"/>
       <div class="starfilter" *ngFor="let number of [1,2,3,4,5]">
-        <div *ngIf="number <= filter">
+        <div *ngIf="number <= filter.value">
           <div class="star">&#9733;</div>
         </div>
       </div>

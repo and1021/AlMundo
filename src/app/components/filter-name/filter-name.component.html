@@ -1,7 +1,17 @@
 <div class="card searchCard">
   <div class="row">
-    <label>Nombre del hotel</label>
-    <input #textbox class="form-control" type="text" [value]="inputValue" placeholder="Ingrese el nombre del hotel">
-    <button class="btn btn-outline-primary btn-block searchButton" (click)="searchHotels(textbox.value)">Aceptar</button>
+    <a data-toggle="collapse" href="#collapseNameFilter" aria-expanded="false" aria-controls="collapseNameFilter">
+      <span class="iconFont">
+        <fa name="search"></fa>
+      </span>
+      <label>  Nombre de hotel  </label>
+      <span class="iconFont">
+        <fa name="caret-down"></fa>
+      </span>
+    </a>
+    <div class="collapse searchSection" id="collapseNameFilter">
+      <input class="searchElement" #textbox type="text" [value]="inputValue" placeholder="Ingrese el nombre del hotel">
+      <button class="btn btn-outline-primary btn-block searchButton searchElement" (click)="searchHotels(textbox.value)">Aceptar</button>
+    </div>
   </div>
 </div>

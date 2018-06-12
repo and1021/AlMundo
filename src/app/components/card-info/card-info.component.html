@@ -1,3 +1,37 @@
-<p>
-  card-info works!
-</p>
+<div class="card itemCard" style="width: 100%;">
+  <div class="row itemRow">
+    <div class="col-md-4">
+      <img class="card-img-top itemImage" src="assets/images/hotels/{{item.image}}"
+      onerror="this.src='assets/images/hotels/none.jpg'">
+    </div>
+    <div class="col-md-5 px-3">
+      <div class="card-block px-3">
+        <div class="row rowCard">
+          <h5 class="titleCard">
+            {{item.name}}
+          </h5>
+        </div>
+        <div class="row rowCard">
+          <div class="itemStar" *ngFor="let number of starArray">
+              <!-- <img class="" src="assets/icons/filters/star.svg" *ngIf="number <= item.stars"> -->
+              <div *ngIf="number <= item.stars" class="star">&#9733;</div>
+          </div>          
+        </div>
+        <div class="row rowCard">
+          <div class="amenities" style="width: 100%;" *ngFor="let amenity of item.amenities">
+            <img class="" src="assets/icons/amenities/{{amenity}}.svg">
+          </div>        
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 borderAmount">
+      <label class="textAmount">Precio por noche por habitación</label>
+      <p class="amountContainer">
+        <span class="currency">ARS</span>
+        &nbsp;
+        <span class="amount">{{item.price}}</span>
+      </p>
+      <a href="#" class="btn btn-primary btnCardItem">Ver hotel</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+.textAmount{
+  text-align: center;
+  font-size: 13px;
+  margin: 12px 0px 7px 0px;
+  width: 100%;
+}
+
+.amountContainer{
+  color: #cb531c;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.amount{
+  line-height: 28px;
+  line-height: 1.75rem;
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.currency{
+  line-height: 28px;
+  line-height: 1.75rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.btnCardItem{
+  color: #ffffff !important;
+  background-color: #020692 !important;
+  background-image: none !important;
+  border-color: #ffffff00 !important;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.titleCard{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-align: left;
+  color: rgb(0, 119, 255);
+  font-weight: bold;
+}
+
+.amenities{
+  width: 6% !important;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.itemStar{
+  width: 6% !important;
+  display: inline-block;
+  margin-right: 10px;
+  fill: #fbff00 !important;
+  stroke:#fbff00 !important;
+}
+
+.itemCard{
+  width: 100%;
+  margin: 10px;
+}
+
+.itemRow{
+  padding: 10px;
+}
+
+.rowCard{
+  margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .itemImage{
+    vertical-align: middle;
+    border-style: none;
+    max-width: 300px;
+    max-height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+  }
+
+  .borderAmount{
+    border-left-style: dashed;
+    border-left-width: 0.5px;
+    border-color: #808080b8;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .itemImage{
+    vertical-align: middle;
+    border-style: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+  }
+  
+  .borderAmount{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-top-style: dashed;
+    border-top-width: 0.5px;
+    border-color: #808080b8;
+  }
+}

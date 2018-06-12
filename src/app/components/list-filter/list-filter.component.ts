@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list-filter',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ListFilterComponent implements OnInit {
 
   constructor() { }
+
+  @Output() public filter = new EventEmitter<string>();
 
   ngOnInit() {
   }

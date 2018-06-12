@@ -1,0 +1,9 @@
+.starfilter{
+    display: inline-block;
+    width: 10% !important;
+}
+
+.checkFilter{
+    display: inline-block;
+    width: 15% !important;
+}

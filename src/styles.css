@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+.body-app{
+    padding-top: 50px;
+}
+
+.star{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    font-size: 1.8rem;
+    color: #fbff00;
+    margin: -18px 1px -8px -3px;
+}
+
+.searchCard{
+    margin-top: 2px;
+    padding: 10px;
+}
+
+.searchCard div.row{
+    width: 100%;
+    margin-left: 0px;
+}
+
+.searchCard div input{
+    width: 65%;
+}
+
+.searchCard div button{
+    width: 35%;
+}
+
+.iconFont{
+    color: #007bff;
+    font-size: 1em;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.searchSection{
+    width: 100%;
+}

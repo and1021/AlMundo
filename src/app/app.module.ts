@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { CardInfoComponent } from './components/card-info/card-info.component';
@@ -42,6 +43,7 @@ const Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot(Routes)
   ],
   providers: [
