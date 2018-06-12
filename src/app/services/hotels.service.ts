@@ -8,16 +8,7 @@ export class HotelsService {
 
   constructor(private http:HttpClient) { }
 
-  getHotels(filters: string): Observable<Hotels[]> {
-    return this.http.get<Hotels[]>('/hotels/'+ filters);
+  getHotels(filters: string): Observable<any[]> {
+    return this.http.get<any[]>('/hotels/'+ filters);
   }
-}
-
-export interface Hotels {
-    id: string;
-    name: string;
-    stars: number;
-    price: number;
-    image: string;
-    amenities: any[];
 }

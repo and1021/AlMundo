@@ -211,9 +211,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var CardInfoComponent = /** @class */ (function () {
     function CardInfoComponent() {
+        this.item = {};
     }
     CardInfoComponent.prototype.ngOnInit = function () {
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CardInfoComponent.prototype, "item", void 0);
     CardInfoComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-card-info',
@@ -373,7 +378,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-3\">\n    <app-list-filter></app-list-filter>\n    <!-- <app-search (inputValue)=\"inputValue\" (checkValue)=\"checkValue\" (searchHotelsB)=\"searchHotelsByStar($event)\" (searchHotelsA)=\"searchHotels($event)\"></app-search> -->\n  </div>\n  <div class=\"col-md-9\">\n    <app-list-card></app-list-card>\n    <!-- <app-hotel-card [hotel]=\"hotel\" style=\"width: 100%;\" *ngFor=\"let hotel of hotels\"></app-hotel-card> -->\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-3\">\n    <app-list-filter></app-list-filter>\n    <!-- <app-search (inputValue)=\"inputValue\" (checkValue)=\"checkValue\" (searchHotelsB)=\"searchHotelsByStar($event)\" (searchHotelsA)=\"searchHotels($event)\"></app-search> -->\n  </div>\n  <div class=\"col-md-9\">\n    <app-list-card [List]='hotelsList'></app-list-card>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -408,7 +413,7 @@ var HotelsComponent = /** @class */ (function () {
     }
     HotelsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.hotelsService.getHotels('name:|stars:').subscribe(function (hotels) {
+        this.hotelsService.getHotels('').subscribe(function (hotels) {
             _this.hotelsList = hotels;
         });
     };
@@ -445,7 +450,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  list-card works!\n</p>\n"
+module.exports = "<app-card-info [item]='item' ngFor='let item of List'></app-card-info>"
 
 /***/ }),
 
@@ -472,9 +477,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ListCardComponent = /** @class */ (function () {
     function ListCardComponent() {
+        this.List = [];
     }
     ListCardComponent.prototype.ngOnInit = function () {
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], ListCardComponent.prototype, "List", void 0);
     ListCardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-list-card',
@@ -560,7 +570,7 @@ var ListFilterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".logo{\r\n    width: 100%;\r\n  }\r\n  .headerAlmundo{\r\n    background-color: #00386f!important;\r\n  }"
 
 /***/ }),
 

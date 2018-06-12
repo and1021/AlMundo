@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { HotelsService } from '../../services/hotels.service';
 
 @Component({
@@ -9,12 +9,12 @@ import { HotelsService } from '../../services/hotels.service';
 export class HotelsComponent implements OnInit {
 
   //TODO Create an interface to normalize the object
-  hotelsList: any = [];
+  hotelsList:any = [];
 
   constructor(private hotelsService: HotelsService) { }
 
   ngOnInit() {
-    this.hotelsService.getHotels('name:|stars:').subscribe(hotels =>{
+    this.hotelsService.getHotels('').subscribe(hotels =>{
       this.hotelsList = hotels;
     });
   }
