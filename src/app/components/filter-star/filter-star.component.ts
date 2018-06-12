@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FilterStarComponent implements OnInit {
   @Output() public searchHotelsB = new EventEmitter<string>();
+  checkValue:string = null;
   starArray:any = [
     {value:5, checked:true, stars:[{value:1},{value:2},{value:3},{value:4},{value:5}]},
     {value:4, checked:true, stars:[{value:1},{value:2},{value:3},{value:4}]},
@@ -31,19 +32,19 @@ export class FilterStarComponent implements OnInit {
   }
 
   public searchHotelsByStar(){
-    let stars = '';
+    this.checkValue = '';
     this.starArray.forEach(element => {
       if(element.checked){
-        if(stars == ''){
-          stars = stars + element.toString();          
+        if(this.checkValue == ''){
+          this.checkValue = this.checkValue + element.toString();          
         }else{
-          stars = stars + '-' + element.toString();
+          this.checkValue = this.checkValue + '-' + element.toString();
         }
       }
     });
-    if(stars!=''){
-      stars = 'stars:' + stars;
+    if(this.checkValue!=''){
+      this.checkValue = 'stars:' + this.checkValue;
     }
-    this.searchHotelsB.emit(stars);
+    this.searchHotelsB.emit(this.checkValue);
   }
 }

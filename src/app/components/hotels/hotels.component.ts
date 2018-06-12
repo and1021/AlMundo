@@ -10,13 +10,19 @@ import { Observable } from 'rxjs';
 })
 export class HotelsComponent implements OnInit {
 
-  //TODO Create an interface to normalize the object
+  filter:string = null;
   hotelsList:any = [];
 
   constructor(private hotelsService: HotelsService) { }
 
   ngOnInit() {
     this.hotelsService.getHotels('').subscribe(hotels =>{
+      this.hotelsList = hotels;
+    });
+  }
+
+  public searchHotelsByFilter(filter:string){
+    this.hotelsService.getHotels(filter).subscribe(hotels =>{
       this.hotelsList = hotels;
     });
   }

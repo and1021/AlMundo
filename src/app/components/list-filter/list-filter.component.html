@@ -5,5 +5,5 @@
     </div>
   </div>
 </div>
-<app-filter-name></app-filter-name>
-<app-filter-star></app-filter-star>
+<app-filter-name (searchHotelsA)="searchHotelsByFilter($event)"></app-filter-name>
+<app-filter-star (searchHotelsB)="searchHotelsByFilter($event)"></app-filter-star>

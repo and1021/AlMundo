@@ -14,8 +14,12 @@ function getListHotels(req, res){
         let filter = (req.params['filters']).split('|');
         let filterArray = filter.map(element => {
             let newElement = element.split(':');
-            let values = newElement[1].split('-');
-            return {filter:newElement[0], value:values};
+           if(!!newElement[1] && newElement[1].length>0){
+               let values = newElement[1].split('-');
+               return {filter:newElement[0], value:values};
+           }else{
+            return {filter:newElement[0], value:[]};
+           }
         });
         if(!!filterArray && filterArray.length > 0){
             //console.log(filterArray);

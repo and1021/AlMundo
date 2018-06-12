@@ -287,9 +287,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var FilterNameComponent = /** @class */ (function () {
     function FilterNameComponent() {
+        this.searchHotelsA = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.inputValue = null;
     }
     FilterNameComponent.prototype.ngOnInit = function () {
     };
+    FilterNameComponent.prototype.searchHotels = function (filterName) {
+        var result = 'name:' + filterName;
+        this.searchHotelsA.emit(result);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], FilterNameComponent.prototype, "searchHotelsA", void 0);
     FilterNameComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-filter-name',
@@ -351,6 +361,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var FilterStarComponent = /** @class */ (function () {
     function FilterStarComponent() {
         this.searchHotelsB = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.checkValue = null;
         this.starArray = [
             { value: 5, checked: true, stars: [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }, { value: 5 }] },
             { value: 4, checked: true, stars: [{ value: 1 }, { value: 2 }, { value: 3 }, { value: 4 }] },
@@ -370,21 +381,22 @@ var FilterStarComponent = /** @class */ (function () {
         return this.starArray.every(function (a) { return a.checked; });
     };
     FilterStarComponent.prototype.searchHotelsByStar = function () {
-        var stars = '';
+        var _this = this;
+        this.checkValue = '';
         this.starArray.forEach(function (element) {
             if (element.checked) {
-                if (stars == '') {
-                    stars = stars + element.toString();
+                if (_this.checkValue == '') {
+                    _this.checkValue = _this.checkValue + element.toString();
                 }
                 else {
-                    stars = stars + '-' + element.toString();
+                    _this.checkValue = _this.checkValue + '-' + element.toString();
                 }
             }
         });
-        if (stars != '') {
-            stars = 'stars:' + stars;
+        if (this.checkValue != '') {
+            this.checkValue = 'stars:' + this.checkValue;
         }
-        this.searchHotelsB.emit(stars);
+        this.searchHotelsB.emit(this.checkValue);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
@@ -423,7 +435,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-3\">\n    <app-list-filter></app-list-filter>\n    <!-- <app-search (inputValue)=\"inputValue\" (checkValue)=\"checkValue\" (searchHotelsB)=\"searchHotelsByStar($event)\" (searchHotelsA)=\"searchHotels($event)\"></app-search> -->\n  </div>\n  <div class=\"col-md-9\">\n    <app-list-card [List]='hotelsList'></app-list-card>\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-3\">\n    <app-list-filter (searchHotelsF)=\"searchHotelsByFilter($event)\"></app-list-filter>\n  </div>\n  <div class=\"col-md-9\">\n    <app-list-card [List]='hotelsList'></app-list-card>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -453,12 +465,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var HotelsComponent = /** @class */ (function () {
     function HotelsComponent(hotelsService) {
         this.hotelsService = hotelsService;
-        //TODO Create an interface to normalize the object
+        this.filter = null;
         this.hotelsList = [];
     }
     HotelsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.hotelsService.getHotels('').subscribe(function (hotels) {
+            _this.hotelsList = hotels;
+        });
+    };
+    HotelsComponent.prototype.searchHotelsByFilter = function (filter) {
+        var _this = this;
+        this.hotelsService.getHotels(filter).subscribe(function (hotels) {
             _this.hotelsList = hotels;
         });
     };
@@ -563,7 +581,7 @@ module.exports = ".titleCard{\r\n  margin-top: 10px;\r\n  padding: 10px;\r\n  he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card titleCard\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <label>Filtros</label>\n    </div>\n  </div>\n</div>\n<app-filter-name></app-filter-name>\n<app-filter-star></app-filter-star>\n"
+module.exports = "<div class=\"card titleCard\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <label>Filtros</label>\n    </div>\n  </div>\n</div>\n<app-filter-name (searchHotelsA)=\"searchHotelsByFilter($event)\"></app-filter-name>\n<app-filter-star (searchHotelsB)=\"searchHotelsByFilter($event)\"></app-filter-star>\n"
 
 /***/ }),
 
@@ -590,14 +608,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ListFilterComponent = /** @class */ (function () {
     function ListFilterComponent() {
-        this.filter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.searchHotelsF = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.filter = null;
     }
     ListFilterComponent.prototype.ngOnInit = function () {
+    };
+    ListFilterComponent.prototype.searchHotelsByFilter = function (checkValue, inputValue) {
+        this.filter = inputValue + '|' + checkValue;
+        this.searchHotelsF.emit(this.filter);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
         __metadata("design:type", Object)
-    ], ListFilterComponent.prototype, "filter", void 0);
+    ], ListFilterComponent.prototype, "searchHotelsF", void 0);
     ListFilterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-list-filter',

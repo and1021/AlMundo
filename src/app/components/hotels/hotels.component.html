@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-3">
-    <app-list-filter></app-list-filter>
-    <!-- <app-search (inputValue)="inputValue" (checkValue)="checkValue" (searchHotelsB)="searchHotelsByStar($event)" (searchHotelsA)="searchHotels($event)"></app-search> -->
+    <app-list-filter (searchHotelsF)="searchHotelsByFilter($event)"></app-list-filter>
   </div>
   <div class="col-md-9">
     <app-list-card [List]='hotelsList'></app-list-card>
