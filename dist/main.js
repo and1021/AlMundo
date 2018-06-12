@@ -581,7 +581,7 @@ module.exports = ".titleCard{\r\n  margin-top: 10px;\r\n  padding: 10px;\r\n  he
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card titleCard\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <label>Filtros</label>\n    </div>\n  </div>\n</div>\n<app-filter-name (searchHotelsA)=\"searchHotelsByFilter($event)\"></app-filter-name>\n<app-filter-star (searchHotelsB)=\"searchHotelsByFilter($event)\"></app-filter-star>\n"
+module.exports = "<div class=\"card titleCard\">\n  <div class=\"row\">\n    <div class=\"col-md-12\">\n      <label>Filtros</label>\n    </div>\n  </div>\n</div>\n<app-filter-name (searchHotelsA)=\"getFilterName($event)\"></app-filter-name>\n<app-filter-star (searchHotelsB)=\"getFilterStar($event)\"></app-filter-star>\n"
 
 /***/ }),
 
@@ -610,11 +610,39 @@ var ListFilterComponent = /** @class */ (function () {
     function ListFilterComponent() {
         this.searchHotelsF = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.filter = null;
+        this.filterStar = null;
+        this.filterName = null;
     }
     ListFilterComponent.prototype.ngOnInit = function () {
     };
-    ListFilterComponent.prototype.searchHotelsByFilter = function (checkValue, inputValue) {
-        this.filter = inputValue + '|' + checkValue;
+    ListFilterComponent.prototype.getFilterStar = function (checkValue) {
+        this.filterStar = checkValue;
+        if (!!this.filterStar) {
+            if (!!this.filterName) {
+                this.filter = this.filterName + '|' + this.filterStar;
+            }
+            else {
+                this.filter = this.filterStar;
+            }
+        }
+        else {
+            this.filterStar = null;
+        }
+        this.searchHotelsF.emit(this.filter);
+    };
+    ListFilterComponent.prototype.getFilterName = function (inputValue) {
+        this.filterName = inputValue;
+        if (!!this.filterName) {
+            if (!!this.filterStar) {
+                this.filter = this.filterStar + '|' + this.filterName;
+            }
+            else {
+                this.filter = this.filterName;
+            }
+        }
+        else {
+            this.filterName = null;
+        }
         this.searchHotelsF.emit(this.filter);
     };
     __decorate([
