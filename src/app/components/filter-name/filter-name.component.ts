@@ -7,14 +7,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FilterNameComponent implements OnInit {
   @Output() public searchHotelsA = new EventEmitter<string>();
-  inputValue:string = null;
+  inputValue: string = null;
   constructor() { }
 
   ngOnInit() {
   }
 
-  public searchHotels(filterName:string){
+  public searchHotels(filterName: string) {
     let result = 'name:' + filterName;
+    if (filterName == '') {
+      result = '';
+    }
     this.searchHotelsA.emit(result);
   }
 }

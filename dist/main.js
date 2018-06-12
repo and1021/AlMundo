@@ -294,6 +294,9 @@ var FilterNameComponent = /** @class */ (function () {
     };
     FilterNameComponent.prototype.searchHotels = function (filterName) {
         var result = 'name:' + filterName;
+        if (filterName == '') {
+            result = '';
+        }
         this.searchHotelsA.emit(result);
     };
     __decorate([
